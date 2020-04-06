@@ -4,9 +4,12 @@ import "./App.css";
 
 function App() {
   return (
-    <Box ml={2} mt={1}>
-      <Box>Unsorted To Dos</Box>
-      <Box>Finished To Dos</Box>
+    <Box display="flex" m={1}>
+      <Box mr={2}>
+        <Box>Unsorted To Dos aaaaaaaaaaaaa</Box>
+        <Box>Finished To Dos</Box>
+      </Box>
+      <Box>Eisenhower To Dos</Box>
     </Box>
   );
 }
