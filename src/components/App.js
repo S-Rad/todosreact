@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, makeStyles } from "@material-ui/core";
+import { Box, makeStyles, CssBaseline } from "@material-ui/core";
 import { LeftToDoList } from ".";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +30,7 @@ const App = () => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
+      <CssBaseline/>
       <Box className={classes.listwrapper}>
         <Box>Unsorted To Dos</Box>
         <Box>Finished To Dos</Box>
