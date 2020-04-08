@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, makeStyles, CssBaseline } from "@material-ui/core";
-import { LeftToDoList } from ".";
+import { LeftToDoList, RightMatrix } from ".";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +21,7 @@ const App = () => {
     <Box className={classes.root}>
       <CssBaseline />
       <LeftToDoList />
-      <Box m={2} flexGrow={2}>
-        Eisenhower To Dos
-      </Box>
+      <RightMatrix />
     </Box>
   );
 };
