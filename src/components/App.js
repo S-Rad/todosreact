@@ -12,17 +12,6 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
     },
   },
-
-  //inline machen
-  listwrapper: {
-    margin: 5,
-    flexGrow: 1,
-  },
-
-  matrixwrapper: {
-    margin: 5,
-    flexGrow: 2,
-  },
 }));
 
 const App = () => {
@@ -30,12 +19,11 @@ const App = () => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <CssBaseline/>
-      <Box className={classes.listwrapper}>
-        <Box>Unsorted To Dos</Box>
-        <Box>Finished To Dos</Box>
+      <CssBaseline />
+      <LeftToDoList />
+      <Box m={2} flexGrow={2}>
+        Eisenhower To Dos
       </Box>
-      <Box className={classes.matrixwrapper}>Eisenhower To Dos</Box>
     </Box>
   );
 };
