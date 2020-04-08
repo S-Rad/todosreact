@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  //styles nach oben ziehen
   const classes = useStyles();
   return (
     <Box className={classes.root}>
       <CssBaseline />
+
       <LeftToDoList />
       <RightMatrix />
     </Box>
