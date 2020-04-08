@@ -1,10 +1,9 @@
 import React from "react";
 import { Box, makeStyles } from "@material-ui/core";
-import "./App.css";
+import { LeftToDoList } from ".";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: 5,
     display: "flex",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
@@ -13,6 +12,17 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
     },
   },
+
+  //inline machen
+  listwrapper: {
+    margin: 5,
+    flexGrow: 1,
+  },
+
+  matrixwrapper: {
+    margin: 5,
+    flexGrow: 2,
+  },
 }));
 
 const App = () => {
@@ -20,11 +30,11 @@ const App = () => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      <Box mr={2} flexGrow={1}>
-        <Box>Unsorted To Dos aaaaaaaaaaaaa</Box>
+      <Box className={classes.listwrapper}>
+        <Box>Unsorted To Dos</Box>
         <Box>Finished To Dos</Box>
       </Box>
-      <Box flexGrow={2}>Eisenhower To Dos</Box>
+      <Box className={classes.matrixwrapper}>Eisenhower To Dos</Box>
     </Box>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App";
+import {App} from ".";
 
 test("renders correct text", () => {
   const { getByText } = global.wrapComponent(<App />);
