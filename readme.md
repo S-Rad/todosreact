@@ -1,6 +1,7 @@
 ![Build and Deploy](https://github.com/S-Rad/todosreact/workflows/Build%20and%20Deploy/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Hello!
 
 ## Available Scripts
 
