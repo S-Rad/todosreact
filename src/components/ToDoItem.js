@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Checkbox, Button } from "@material-ui/core";
 
-const ToDoItem = () => {
+const ToDoItem = (props) => {
   const [active, setActive] = useState("true");
   const activeStyle = {
     color: "#000000",
@@ -20,7 +20,7 @@ const ToDoItem = () => {
     <Box display="flex" alignItems="center" justifyContent="space-between">
       <Box style={active ? activeStyle : inactiveStyle}>
         <Checkbox onClick={handleChecked} />
-        To Do
+        {props.toDoText}
       </Box>
       <Button variant="contained">Yeet</Button>
     </Box>

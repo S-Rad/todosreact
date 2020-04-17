@@ -3,12 +3,12 @@ import { Box } from "@material-ui/core";
 import { AddToDoField, ToDoItem } from ".";
 
 const LeftToDoList = () => {
-  const activeToDos = [];
+  const activeToDos = [<ToDoItem toDoText="bebsi" />];
   const inactiveToDos = [];
 
-  const addToDo = () =>{
-
-  }
+  const addToDo = (text) => {
+    return <ToDoItem toDoText={text} />;
+  };
   return (
     <Box m={2} flexGrow={1}>
       <AddToDoField />
