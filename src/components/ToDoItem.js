@@ -18,7 +18,7 @@ const ToDoItem = () => {
 
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
-      <Box>
+      <Box style={active ? activeStyle : inactiveStyle}>
         <Checkbox onClick={handleChecked} />
         To Do
       </Box>
