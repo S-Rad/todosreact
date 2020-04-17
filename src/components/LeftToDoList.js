@@ -3,12 +3,23 @@ import { Box } from "@material-ui/core";
 import { AddToDoField, ToDoItem } from ".";
 
 const LeftToDoList = () => {
+  const activeToDos = [];
+  const inactiveToDos = [];
+
+  const addToDo = () =>{
+
+  }
   return (
     <Box m={2} flexGrow={1}>
       <AddToDoField />
-      <ToDoItem />
-      <Box>Unsorted To Dos</Box>
-      <Box>Finished To Dos</Box>
+      <Box>
+        Unsorted To Dos
+        {activeToDos}
+      </Box>
+      <Box>
+        Finished To Dos
+        {inactiveToDos}
+      </Box>
     </Box>
   );
 };
