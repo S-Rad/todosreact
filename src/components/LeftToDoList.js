@@ -1,16 +1,15 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import todosslice from "../todos";
 import { Box } from "@material-ui/core";
 import { AddToDoField, ToDoItem } from ".";
 
 const LeftToDoList = () => {
-  const activeToDos = [<ToDoItem toDoText="bebsi" key={-1} />];
-  const inactiveToDos = [];
-  let toDoId = 0;
+  const dispatch = useDispatch();
+  const toDos = useSelector((state) => state.todos);
 
   const addToDo = (text) => {
-    activeToDos.push(<ToDoItem toDoText={text} key={toDoId++} />);
-    console.log(text + " " + toDoId);
-    console.log(activeToDos);
+    dispatch(todosslice.actions.add({text}));
   };
 
   return (
@@ -18,11 +17,19 @@ const LeftToDoList = () => {
       <AddToDoField onClick={addToDo} />
       <Box>
         Unsorted To Dos
-        {activeToDos}
+        {toDos
+          .filter((toDo) => toDo.active)
+          .map((toDo) => (
+            <ToDoItem {...toDo} key={toDo.id} />
+          ))}
       </Box>
       <Box>
         Finished To Dos
-        {inactiveToDos}
+        {toDos
+          .filter((toDo) => !toDo.active)
+          .map((toDo) => (
+            <ToDoItem {...toDo} key={toDo.id} />
+          ))}
       </Box>
     </Box>
   );
