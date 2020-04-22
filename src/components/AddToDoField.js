@@ -10,10 +10,17 @@ const AddToDoField = (props) => {
         id="filled-basic"
         label="Filled"
         variant="filled"
+        value={toDoText}
         onChange={(event) => setToDoText(event.target.value)}
         fullWidth
       />
-      <Button variant="contained" onClick={() => props.onClick(toDoText)}>
+      <Button
+        variant="contained"
+        onClick={() => {
+          props.onClick(toDoText);
+          setToDoText("");
+        }}
+      >
         +
       </Button>
     </Box>
