@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Checkbox, Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import todosslice from "../todos";
