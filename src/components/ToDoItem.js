@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Checkbox, Button } from "@material-ui/core";
+import { Box, Checkbox, Button, NativeSelect } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import todosslice from "../todos";
 
@@ -24,12 +24,24 @@ const ToDoItem = ({ id, text, active }) => {
         />
         {text}
       </Box>
-      <Button
-        variant="contained"
-        onClick={() => dispatch(todosslice.actions.remove({ id }))}
-      >
-        Yeet
-      </Button>
+      <Box>
+        {" "}
+        <NativeSelect>
+          <option value="" disabled>
+            Category
+          </option>
+          <option value={10}>Important, Urgent</option>
+          <option value={20}>Important, Not Urgent</option>
+          <option value={30}>Not Important, Urgent</option>
+          <option value={30}>Not Important, Not Urgent</option>
+        </NativeSelect>
+        <Button
+          variant="contained"
+          onClick={() => dispatch(todosslice.actions.remove({ id }))}
+        >
+          Yeet
+        </Button>
+      </Box>
     </Box>
   );
 };
