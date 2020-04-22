@@ -18,10 +18,18 @@ const ToDoItem = ({ id, text, active }) => {
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
       <Box style={active ? activeStyle : inactiveStyle}>
-        <Checkbox onClick={() => dispatch(todosslice.actions.toggle({id}))} />
+        <Checkbox
+          onClick={() => dispatch(todosslice.actions.toggle({ id }))}
+          checked={!active}
+        />
         {text}
       </Box>
-      <Button variant="contained">Yeet</Button>
+      <Button
+        variant="contained"
+        onClick={() => dispatch(todosslice.actions.remove({ id }))}
+      >
+        Yeet
+      </Button>
     </Box>
   );
 };
