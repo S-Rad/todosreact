@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
-import produce from "immer";
 
 const todosslice = createSlice({
   name: "todos",
@@ -15,20 +14,14 @@ const todosslice = createSlice({
       }),
     remove: (state, action) =>
       state.filter((todo) => todo.id !== action.payload.id),
-    toggle: (state, action) =>
-      produce(state, (draftstate) => {
-        const index = draftstate.findIndex(
-          (todo) => todo.id === action.payload.id
-        );
-        draftstate[index].active = !draftstate[index].active;
-      }),
-    categorize: (state, action) =>
-      produce(state, (draftstate) => {
-        const index = draftstate.findIndex(
-          (todo) => todo.id === action.payload.id
-        );
-        draftstate[index].category = action.payload.category;
-      }),
+    toggle: (state, action) => {
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
+      state[index].active = !state[index].active;
+    },
+    categorize: (state, action) => {
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
+      state[index].category = action.payload.category;
+    },
   },
 });
 export default todosslice;
