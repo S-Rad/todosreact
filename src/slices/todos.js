@@ -10,7 +10,7 @@ const todosslice = createSlice({
         id: uuidv4(),
         text: action.payload.text,
         active: true,
-        category: "Unsorted",
+        category: null,
       }),
     remove: (state, action) =>
       state.filter((todo) => todo.id !== action.payload.id),

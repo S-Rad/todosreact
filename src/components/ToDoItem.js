@@ -35,7 +35,10 @@ const ToDoItem = ({ id, text, active, category }) => {
         {" "}
         {/*auf value zugreifen und an store uebergeben*/}
         <NativeSelect
-          onChange={() => dispatch(todosslice.actions.categorize({ id }))}
+          onChange={e => 
+            dispatch(todosslice.actions.categorize({ id, category: e.currentTarget.value }))
+
+          }
         >
           <option value={null}>{category_null}</option>
           <option value="a1">{category_a1}</option>
