@@ -6,10 +6,10 @@ import { AddToDoField, ToDoItem } from ".";
 
 const LeftToDoList = () => {
   const dispatch = useDispatch();
-  const toDos = useSelector((state) => state.todos);
+  const { todos } = useSelector(_ => _);
 
   const addToDo = (text) => {
-    dispatch(todosslice.actions.add({text}));
+    dispatch(todosslice.actions.add({ text }));
   };
 
   return (
@@ -17,7 +17,7 @@ const LeftToDoList = () => {
       <AddToDoField onClick={addToDo} />
       <Box>
         Unsorted To Dos
-        {toDos
+        {todos
           .filter((toDo) => toDo.active)
           .map((toDo) => (
             <ToDoItem {...toDo} key={toDo.id} />
@@ -25,7 +25,7 @@ const LeftToDoList = () => {
       </Box>
       <Box>
         Finished To Dos
-        {toDos
+        {todos
           .filter((toDo) => !toDo.active)
           .map((toDo) => (
             <ToDoItem {...toDo} key={toDo.id} />

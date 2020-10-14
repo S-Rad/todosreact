@@ -2,6 +2,13 @@ import React from "react";
 import { Box, Checkbox, Button, NativeSelect } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import todosslice from "../slices/todos";
+import {
+  category_null,
+  category_a1,
+  category_a2,
+  category_b1,
+  category_b2,
+} from "../locale.json";
 
 const ToDoItem = ({ id, text, active, category }) => {
   const dispatch = useDispatch();
@@ -25,16 +32,16 @@ const ToDoItem = ({ id, text, active, category }) => {
         {text}
       </Box>
       <Box>
-        {" "} 
+        {" "}
         {/*auf value zugreifen und an store uebergeben*/}
-        <NativeSelect onChange={() => dispatch(todosslice.actions.categorize({ id } ))}>
-          <option value={null}>Unsorted</option>
-          <option value="a1">Important, Urgent</option>
-          <option value="a2">Important, Not Urgent</option>
-          <option value="b1">Not Important, Urgent</option>
-          <option value="b2">
-            Not Important, Not Urgent
-          </option>
+        <NativeSelect
+          onChange={() => dispatch(todosslice.actions.categorize({ id }))}
+        >
+          <option value={null}>{category_null}</option>
+          <option value="a1">{category_a1}</option>
+          <option value="a2">{category_a2}</option>
+          <option value="b1">{category_b1}</option>
+          <option value="b2">{category_b2}</option>
         </NativeSelect>
         <Button
           variant="contained"
