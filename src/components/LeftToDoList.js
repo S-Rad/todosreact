@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import todosslice from "../todos";
+import todosslice from "../slices/todos";
 import { Box } from "@material-ui/core";
 import { AddToDoField, ToDoItem } from ".";
 
