@@ -19,7 +19,7 @@ const LeftToDoList = () => {
       <Box>
         {title_unsorted}
         {todos
-          .filter((toDo) => toDo.active)
+          .filter((toDo) => toDo.active && toDo.category === null)
           .map((toDo) => (
             <ToDoItem {...toDo} key={toDo.id} />
           ))}
