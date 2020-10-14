@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/todosreact/static/js/main.e2b2bcf7.chunk.js",
-    "main.js.map": "/todosreact/static/js/main.e2b2bcf7.chunk.js.map",
+    "main.js": "/todosreact/static/js/main.9d9128f2.chunk.js",
+    "main.js.map": "/todosreact/static/js/main.9d9128f2.chunk.js.map",
     "runtime-main.js": "/todosreact/static/js/runtime-main.50323146.js",
     "runtime-main.js.map": "/todosreact/static/js/runtime-main.50323146.js.map",
-    "static/js/2.0c97907d.chunk.js": "/todosreact/static/js/2.0c97907d.chunk.js",
-    "static/js/2.0c97907d.chunk.js.map": "/todosreact/static/js/2.0c97907d.chunk.js.map",
+    "static/js/2.dea06cea.chunk.js": "/todosreact/static/js/2.dea06cea.chunk.js",
+    "static/js/2.dea06cea.chunk.js.map": "/todosreact/static/js/2.dea06cea.chunk.js.map",
     "index.html": "/todosreact/index.html",
-    "precache-manifest.493db94badbf7b8b34f2461a2f6f8118.js": "/todosreact/precache-manifest.493db94badbf7b8b34f2461a2f6f8118.js",
+    "precache-manifest.cd193f5c8ee1136e2f28d65492b3fcf6.js": "/todosreact/precache-manifest.cd193f5c8ee1136e2f28d65492b3fcf6.js",
     "service-worker.js": "/todosreact/service-worker.js",
-    "static/js/2.0c97907d.chunk.js.LICENSE.txt": "/todosreact/static/js/2.0c97907d.chunk.js.LICENSE.txt"
+    "static/js/2.dea06cea.chunk.js.LICENSE.txt": "/todosreact/static/js/2.dea06cea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.50323146.js",
-    "static/js/2.0c97907d.chunk.js",
-    "static/js/main.e2b2bcf7.chunk.js"
+    "static/js/2.dea06cea.chunk.js",
+    "static/js/main.9d9128f2.chunk.js"
   ]
 }
