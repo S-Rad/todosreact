@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import todosslice from "../slices/todos";
 import { Box } from "@material-ui/core";
 import { AddToDoField, ToDoItem } from ".";
+import { title_unsorted, title_finished } from "../locale.json";
 
 const LeftToDoList = () => {
   const dispatch = useDispatch();
-  const { todos } = useSelector(_ => _);
+  const { todos } = useSelector((_) => _);
 
   const addToDo = (text) => {
     dispatch(todosslice.actions.add({ text }));
@@ -16,7 +17,7 @@ const LeftToDoList = () => {
     <Box m={2} flexGrow={1}>
       <AddToDoField onClick={addToDo} />
       <Box>
-        Unsorted To Dos
+        {title_unsorted}
         {todos
           .filter((toDo) => toDo.active)
           .map((toDo) => (
@@ -24,7 +25,7 @@ const LeftToDoList = () => {
           ))}
       </Box>
       <Box>
-        Finished To Dos
+        {title_finished}
         {todos
           .filter((toDo) => !toDo.active)
           .map((toDo) => (
