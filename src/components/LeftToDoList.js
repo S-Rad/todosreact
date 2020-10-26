@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import todosslice from "../slices/todos";
 import { Box } from "@material-ui/core";
-import { AddToDoField, ToDoItem } from ".";
+import { AddToDoField, ToDoItem, ToDoList } from ".";
 import { title_unsorted, title_finished } from "../locale.json";
 
 const LeftToDoList = () => {
@@ -16,22 +16,16 @@ const LeftToDoList = () => {
   return (
     <Box m={2} flexGrow={1}>
       <AddToDoField onClick={addToDo} />
-      
-        {title_unsorted}
-        {todos
-          .filter((toDo) => toDo.active && toDo.category === null)
-          .map((toDo) => (
-            <ToDoItem {...toDo} key={toDo.id} />
-          ))}
-      
-      
-        {title_finished}
-        {todos
-          .filter((toDo) => !toDo.active)
-          .map((toDo) => (
-            <ToDoItem {...toDo} key={toDo.id} />
-          ))}
-      
+
+      {title_unsorted}
+      {
+        <ToDoList
+          todos={todos.filter((toDo) => toDo.active && toDo.category === null)}
+        />
+      }
+
+      {title_finished}
+      {<ToDoList todos={todos.filter((toDo) => !toDo.active)} />}
     </Box>
   );
 };
