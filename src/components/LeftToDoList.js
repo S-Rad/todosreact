@@ -16,22 +16,22 @@ const LeftToDoList = () => {
   return (
     <Box m={2} flexGrow={1}>
       <AddToDoField onClick={addToDo} />
-      <Box>
+      
         {title_unsorted}
         {todos
           .filter((toDo) => toDo.active && toDo.category === null)
           .map((toDo) => (
             <ToDoItem {...toDo} key={toDo.id} />
           ))}
-      </Box>
-      <Box>
+      
+      
         {title_finished}
         {todos
           .filter((toDo) => !toDo.active)
           .map((toDo) => (
             <ToDoItem {...toDo} key={toDo.id} />
           ))}
-      </Box>
+      
     </Box>
   );
 };
