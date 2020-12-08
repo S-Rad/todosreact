@@ -10,6 +10,7 @@ import {
   category_b2,
 } from "../locale.json";
 
+
 const ToDoItem = ({ id, text, active, category }) => {
   const dispatch = useDispatch();
 
@@ -35,10 +36,15 @@ const ToDoItem = ({ id, text, active, category }) => {
         {" "}
         {/*auf value zugreifen und an store uebergeben*/}
         <NativeSelect
-          onChange={e => 
-            dispatch(todosslice.actions.categorize({ id, category: e.currentTarget.value }))
-
+          onChange={(e) =>
+            dispatch(
+              todosslice.actions.categorize({
+                id,
+                category: e.currentTarget.value,
+              })
+            )
           }
+          value={category}
         >
           <option value={null}>{category_null}</option>
           <option value="a1">{category_a1}</option>
